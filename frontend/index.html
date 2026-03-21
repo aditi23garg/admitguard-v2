@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AdmitGuard V2</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>🛡️ AdmitGuard V2</h1>
+    <p>Enterprise Admission Validation Platform</p>
+  </div>
+
+  <!-- STEP 1: PERSONAL INFO -->
+  <div class="section">
+    <h2>01 — Personal Information</h2>
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" id="name" placeholder="Enter full name"/>
+      <span class="error" id="err-name"></span>
+    </div>
+    <div class="form-group">
+      <label>Email Address *</label>
+      <input type="email" id="email" placeholder="Enter email"/>
+      <span class="error" id="err-email"></span>
+    </div>
+    <div class="form-group">
+      <label>Phone Number *</label>
+      <input type="tel" id="phone" placeholder="10-digit mobile number"/>
+      <span class="error" id="err-phone"></span>
+    </div>
+    <div class="form-group">
+      <label>Date of Birth *</label>
+      <input type="date" id="dob"/>
+      <span class="error" id="err-dob"></span>
+    </div>
+  </div>
+
+  <!-- STEP 2: EDUCATION PATH -->
+  <div class="section">
+    <h2>02 — Education Path</h2>
+    <p class="hint">Select the path that matches your education history</p>
+    <div class="path-selector">
+      <label class="path-card">
+        <input type="radio" name="path" value="A" onchange="switchPath('A')"/>
+        <div class="path-content">
+          <strong>Path A — Standard</strong>
+          <small>10th → 12th → UG → PG</small>
+        </div>
+      </label>
+      <label class="path-card">
+        <input type="radio" name="path" value="B" onchange="switchPath('B')"/>
+        <div class="path-content">
+          <strong>Path B — Diploma</strong>
+          <small>10th → Diploma → UG</small>
+        </div>
+      </label>
+      <label class="path-card">
+        <input type="radio" name="path" value="C" onchange="switchPath('C')"/>
+        <div class="path-content">
+          <strong>Path C — Lateral Entry</strong>
+          <small>10th → ITI → Diploma → UG</small>
+        </div>
+      </label>
+    </div>
+    <span class="error" id="err-path"></span>
+
+    <!-- Education entries rendered by JS -->
+    <div id="education-entries"></div>
+  </div>
+
+  <!-- STEP 3: WORK EXPERIENCE -->
+  <div class="section">
+    <h2>03 — Work Experience</h2>
+    <p class="hint">Add all jobs, internships, and freelance work</p>
+    <div id="work-entries"></div>
+    <button type="button" class="btn-secondary" onclick="addWorkEntry()">+ Add Work Experience</button>
+    <span class="error" id="err-work"></span>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="section">
+    <button type="button" class="btn-primary" onclick="submitForm()">
+      <span id="btn-text">Submit Application</span>
+      <span id="btn-spinner" style="display:none">⏳ Validating...</span>
+    </button>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="result-screen" style="display:none" class="section result-box">
+    <h2 id="result-title"></h2>
+    <div id="result-body"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
