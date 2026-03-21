@@ -1,7 +1,7 @@
 // ============================================================
 // BACKEND URL — change this after you deploy to Render
 // ============================================================
-const BACKEND_URL = "https://YOUR-BACKEND.onrender.com";
+const BACKEND_URL = "https://admitguard-v2-backend.onrender.com";
 
 // ============================================================
 // EDUCATION PATH LOGIC
