@@ -41,7 +41,9 @@ def validate():
         try:
             write_to_sheet(data, flags, score_data)
         except Exception as sheet_error:
+            import traceback
             print(f"Sheet write failed: {sheet_error}")
+            print(f"Full traceback: {traceback.format_exc()}")
             # Don't fail the whole request if sheet write fails
 
         return jsonify({
