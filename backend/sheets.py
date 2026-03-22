@@ -14,6 +14,8 @@ def write_to_sheet(data, flags, score_data):
 
     creds = Credentials.from_service_account_file(creds_path, scopes=scope)
     client = gspread.authorize(creds)
+    print(f"SHEET_ID value: '{sheet_id}'")
+    print(f"Credentials email: {creds.service_account_email}")
     sheet = client.open_by_key(sheet_id).sheet1
 
     # Summarize education
