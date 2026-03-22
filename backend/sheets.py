@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 def write_to_sheet(data, flags, score_data):
-    creds_path = os.getenv("GOOGLE_CREDENTIALS_PATH", "credentials.json")
+    creds_path = os.getenv("GOOGLE_CREDENTIALS_PATH", "/etc/secrets/credentials.json")
     sheet_id = os.getenv("SHEET_ID")
 
     scope = [
